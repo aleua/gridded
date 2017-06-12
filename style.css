@@ -26,6 +26,7 @@ body {
 	line-height: 1.45;
 	padding-top: 90px;
 	color: #8c8c9a;
+	background-color: #f2f2f2;
 }
 .container {
     margin-left: auto;
@@ -139,10 +140,12 @@ footer .copyright {margin: 0; font-size: 13px; text-transform: uppercase;}
 
 }
 .sider-blog article {
-
+	background: #fff;
 }
+.sider-blog article div { padding-left: 15px; padding-right: 15px; }
 .sider-blog article header h1 {
-
+	padding-left: 15px; padding-right: 15px;
+	font-size: 1.5em;
 }
 .sider-blog article .more-link {
 	display: block;
