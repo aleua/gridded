@@ -30,6 +30,7 @@
 
 		<div>
 			<?php the_excerpt(); ?>
+			<a href="<?php the_permalink();?>" class="more-link" title="Les <?php the_title(); ?>">Les mer &raquo;</a>
 		</div>
 
 

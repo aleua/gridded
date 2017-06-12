@@ -106,15 +106,17 @@ function gridded_scripts_styles() {
 	wp_enqueue_style( 'animate-css',
 			get_stylesheet_directory_uri() .'/css/animate.min.css' );
 
-	// Loading OWL only on home
-	// if (is_front_page( )) {
-	// 	wp_enqueue_style( 'owl-css',
-	// 		get_stylesheet_directory_uri() .'/js/owl-carousel/assets/owl.carousel.css' );
-	// 	wp_enqueue_script( 'owl-js',
-	// 		get_stylesheet_directory_uri() . '/js/owl-carousel/owl.carousel.min.js', array('jquery'), true, true);
-	// 	wp_enqueue_script( 'owl-init',
-	// 		get_stylesheet_directory_uri() . '/js/owl-init.js', array('jquery'), true, true);
-	// }
+	// Loading OWL only on 'featured'
+	if (is_page( 31 )) {
+		wp_enqueue_style( 'owl-css',
+			get_stylesheet_directory_uri() .'/js/owl-carousel/owl.carousel.min.css' );
+		wp_enqueue_style( 'owl-theme',
+			get_stylesheet_directory_uri() .'/js/owl-carousel/owl.theme.default.min.css' );
+		wp_enqueue_script( 'owl-js',
+			get_stylesheet_directory_uri() . '/js/owl-carousel/owl.carousel.min.js', array('jquery'), true, true);
+		wp_enqueue_script( 'owl-init',
+			get_stylesheet_directory_uri() . '/js/owl-init.js', array('jquery'), true, true);
+	}
 
 	wp_enqueue_style( 'gridded-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'gridded-java',
@@ -173,7 +175,9 @@ add_filter( 'the_generator', 'wp_bootstrap_rss_version' );
 if( !function_exists( "wp_bootstrap_excerpt_more" ) ) {
   function gridded_bootstrap_excerpt_more( $more ) {
 	global $post;
-	return '...  <a href="'. get_permalink($post->ID) . '" class="more-link" title="Read '.get_the_title($post->ID).'">Les mer &raquo;</a>';
+	// return '...  <a href="'. get_permalink($post->ID) . '" class="more-link" title="Read '.get_the_title($post->ID).'">Les mer &raquo;</a>';
+	// Opting to make this blank - so I can control it more subtly for the 2 various pages.
+	return '';
   }
 }
 add_filter('excerpt_more', 'gridded_bootstrap_excerpt_more');

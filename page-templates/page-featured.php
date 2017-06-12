@@ -8,55 +8,42 @@
 get_header(); ?>
 
 	<section class="sider sider-featured">
-		<div class="container">
-			<div class="hero" id="hero-featured">
 
-				<?php
-					query_posts(array(
-						'post_type' => 'post',
-						'posts_per_page' => 14,
-						'orderby' => 'asc'
-					) );
-				?>
+		<div class="owl-carousel owl-theme hero" id="hero-featured">
 
-				<?php while (have_posts()) : the_post(); ?>
+			<?php
+				query_posts(array(
+					'post_type' => 'post',
+					'posts_per_page' => 14,
+					'orderby' => 'asc'
+				) );
+			?>
 
-					<article <?php post_class(); ?>>
-						<header>
-							<a href="<?php the_permalink();?>">
-								<?php
-									// Must be inside a loop.
+			<?php while (have_posts()) : the_post(); ?>
 
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail('post-thumbnails', array('class' => 'img-responsive'));
-									}
-									else {
-										echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
-											. '/img/no-image.png" class="img-responsive" />';
-									}
-								?>
-							</a>
+				<article <?php post_class(); ?>>
 
+					<?php
+						// Must be inside a loop.
 
-						</header>
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail('news-big');
+						}
+					?>
 
-						<div class="hero-inner">
-							<div class="meta">
-								<small><i class="fa fa-clock-o"></i> Publisert: <?php the_time('F jS, Y'); ?></small>
-							</div>
-							<a href="<?php the_permalink();?>">
-								<h1><?php the_title(); ?></h1>
-							</a>
-							<?php the_excerpt(); ?>
+					<div class="hero-inner">
+						<h1><?php the_title(); ?></h1>
+						<div class="meta">
+							<small><i class="fa fa-clock-o"></i> Publisert: <?php the_time('F jS, Y'); ?></small>
 						</div>
+						<?php the_excerpt(); ?>
+						<a href="<?php the_permalink();?>" class="more-link" title="Les <?php the_title(); ?>">Les mer &raquo;</a>
+					</div>
 
+				</article>
 
+			<?php endwhile;?>
 
-					</article>
-
-				<?php endwhile;?>
-
-			</div>
 		</div>
 	</section>
 

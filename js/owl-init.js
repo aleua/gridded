@@ -1,13 +1,14 @@
 // Initialize owl slider
 jQuery(document).ready(function($){
 
-	$("#hero-home").owlCarousel({
-		navigation : true, // Show next and prev buttons
-		autoPlay : 	true,
+	$("#hero-featured").owlCarousel({
+		nav : false,
+		pills: true,
+		autoplay : 	true,
+		loop: true,
 		slideSpeed : 300,
 		paginationSpeed : 400,
-		singleItem: true
-
+		items: 1
 	});
 
 });
