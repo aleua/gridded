@@ -1,0 +1,192 @@
+/*
+Theme Name: Gridded
+Theme URI: http://www.codeloop.no
+Description: Theme initially designed as a test case for CA.
+Version: 2.5
+Author: Christiaan Gieles
+Author URI: http://www.codeloop.no
+*/
+
+
+/*------------------------------------*\
+	0.5 IMPORTING OTHER RESOURCES
+\*------------------------------------*/
+
+@import url('//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/*------------------------------------*\
+	1.0 GLOBAL
+\*------------------------------------*/
+html {}
+
+body {
+	height: 100%;
+	font-family: "Roboto", Arial, sans-serif;
+	line-height: 1.45;
+	padding-top: 90px;
+	color: #8c8c9a;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+.row {
+
+}
+
+/*------------------------------------*\
+	1.1 TYPOGRAPHY
+\*------------------------------------*/
+
+p {
+	margin-bottom: 1.5em;
+}
+a {
+	color: #67aef7;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 15px;
+
+}
+
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+
+
+/*------------------------------------*\
+	1.2 BUTTONS
+\*------------------------------------*/
+
+.btn {}
+
+
+/*------------------------------------*\
+	2.1 NAVIGATION
+\*------------------------------------*/
+.navbar-default {
+	background-color: #3f3f4e;
+	border-radius: 0;
+	border: 0;
+	margin: 0;
+	padding: 10px 0;
+	box-shadow: 0 1px 10px rgba(0,0,0,.1);
+}
+.navbar-default .container {
+	display: block;
+}
+.navbar-default .navbar-brand {
+	font-weight: 700;
+	color: #67aef7;
+	letter-spacing: 1px;
+}
+.navbar-default .navbar-nav>li>a {
+	font-weight: 700;
+	color: #727a92;
+	letter-spacing: 1px;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+	background-color: transparent;
+	color: #fff;
+}
+
+
+
+/* LOGGED IN FIXES */
+body.logged-in .navbar-fixed-top {
+	top: 32px;
+}
+
+/*------------------------------------*\
+	2.2 SIDEBAR
+\*------------------------------------*/
+
+/*------------------------------------*\
+	2.3 FOOTER
+\*------------------------------------*/
+
+footer {
+	background: #f7f7fa;
+	text-align: center;
+	padding: 10px 0;
+	margin-top: 30px;
+}
+footer .copyright {margin: 0; font-size: 13px; text-transform: uppercase;}
+
+/*------------------------------------*\
+	3.x BLOG
+\*------------------------------------*/
+.sider-blog {}
+.sider-blog .container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+
+}
+.sider-blog article {
+	border-bottom: 1px solid #e4e7f0;
+}
+.sider-blog article header h1 {
+
+}
+.sider-blog article .more-link {
+	display: block;
+	margin: 10px 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+
+
+/*------------------------------------*\
+	8.0 RESPONSIVE STYLES
+\*------------------------------------*/
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+	.sider .container {
+		padding: 0 15px;
+	}
+	.sider-blog .container article {
+
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: auto;
+		grid-row-end: auto;
+	}
+}
+@media (max-width: 480px) {
+
+}
