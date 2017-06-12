@@ -20,16 +20,8 @@ get_header(); ?>
 			?>
 
 			<?php while (have_posts()) : the_post(); ?>
-
-				<article <?php post_class(); ?>>
-
-					<?php
-						// Must be inside a loop.
-
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail('news-big');
-						}
-					?>
+				<?php $hero = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'news-hero' ); ?>
+				<article style="background-image: url('<?php echo $hero['0'];?>')" <?php post_class(); ?>>
 
 					<div class="hero-inner">
 						<h1><?php the_title(); ?></h1>
