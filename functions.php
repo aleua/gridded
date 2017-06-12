@@ -25,7 +25,8 @@ function gridded_setup() {
 	// This code can also be duplicated and change the theme-support call to make various other variants of thumbnails.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1140, 9999 ); // Unlimited height, soft crop
-	add_image_size( 'news', 570, 320, array( 'center', 'center' ) ); // Hard crop centered
+	add_image_size( 'news-hero', 1600, 1000, array( 'center', 'center' ) ); // Hard crop centered
+	add_image_size( 'news', 580, 320, array( 'center', 'center' ) ); // Hard crop centered
 }
 add_action( 'after_setup_theme', 'gridded_setup' );
 

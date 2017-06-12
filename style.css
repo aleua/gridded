@@ -47,6 +47,8 @@ p {
 }
 a {
 	color: #67aef7;
+	-webkit-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 15px;
@@ -78,6 +80,8 @@ h4 {
 	2.1 NAVIGATION
 \*------------------------------------*/
 .navbar-default {
+	-webkit-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
 	background-color: #3f3f4e;
 	border-radius: 0;
 	border: 0;
@@ -94,10 +98,17 @@ h4 {
 	letter-spacing: 1px;
 }
 .navbar-default .navbar-nav>li>a {
+	-webkit-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
 	font-weight: 700;
 	color: #727a92;
 	letter-spacing: 1px;
 }
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+	color: #a4acc3;
+}
+
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
@@ -137,15 +148,24 @@ footer .copyright {margin: 0; font-size: 13px; text-transform: uppercase;}
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-column-gap: 15px;
 	grid-row-gap: 15px;
-
 }
 .sider-blog article {
 	background: #fff;
+	-webkit-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+}
+.sider-blog article:hover {
+	box-shadow: 0 4px 4px rgba(0,0,0,.1);
 }
 .sider-blog article div { padding-left: 15px; padding-right: 15px; }
 .sider-blog article header h1 {
 	padding-left: 15px; padding-right: 15px;
 	font-size: 1.5em;
+	margin: 10px 0;
+}
+.sider-blog article .meta {
+	background: #fcfcfc;
+	border-bottom: 1px solid #f7f7f7;
 }
 .sider-blog article .more-link {
 	display: block;
@@ -155,7 +175,14 @@ footer .copyright {margin: 0; font-size: 13px; text-transform: uppercase;}
 	font-weight: 700;
 }
 
-
+.sider-blog article:nth-child(5) {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+.sider-blog article:nth-child(6) {
+	grid-column-start: 3;
+	grid-column-end: 5;
+}
 
 /*------------------------------------*\
 	8.0 RESPONSIVE STYLES
@@ -183,7 +210,6 @@ footer .copyright {margin: 0; font-size: 13px; text-transform: uppercase;}
 		padding: 0 15px;
 	}
 	.sider-blog .container article {
-
 		grid-column-start: 1;
 		grid-column-end: 5;
 		grid-row-start: auto;

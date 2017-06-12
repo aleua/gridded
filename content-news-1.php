@@ -18,12 +18,20 @@
 							. '/img/no-image.png" class="img-responsive" />';
 					}
 				?>
+			</a>
+			<div class="meta">
+				<small><i class="fa fa-clock-o"></i> Publisert: <?php the_time('F jS, Y'); ?></small>
+			</div>
+			<a href="<?php the_permalink();?>">
 				<h1><?php the_title(); ?></h1>
 			</a>
+
 		</header>
 
 		<div>
 			<?php the_excerpt(); ?>
 		</div>
+
+
 
 	</article>
